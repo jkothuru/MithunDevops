@@ -11,14 +11,14 @@ node{
       
     } 
     
-    
+    /**
     stage('Build Docker and Push Image'){
        // sh 'docker build -t dockerhandson/spring-boot-mongo .'
        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 086276496519.dkr.ecr.us-west-2.amazonaws.com
        sudo docker build -t first .
        sudo docker tag first:latest 086276496519.dkr.ecr.us-west-2.amazonaws.com/first:latest
        sudo docker push 086276496519.dkr.ecr.us-west-2.amazonaws.com/first:latest
-    }
+    } **/
     /**
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
