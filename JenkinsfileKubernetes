@@ -11,7 +11,7 @@ node{
     } 
     
     
-    stage('Build Docker and Push Image'){
+    stage('Build Docker and Push Image in AWS'){
        // sh 'docker build -t dockerhandson/spring-boot-mongo .'
        aws ecr get-login --no-include-email | bash
        docker build -t first .
