@@ -19,6 +19,6 @@ node{
     docker.withRegistry('https://086276496519.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:ecr-credentials') {
     docker.image('first').push('latest')
   }
-   
+ }  
 }
 
