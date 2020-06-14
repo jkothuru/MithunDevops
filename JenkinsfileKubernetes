@@ -19,6 +19,12 @@ node{
        docker push 086276496519.dkr.ecr.us-west-2.amazonaws.com/first:latest
     }
     /**
+    stage('push'){
+    docker.withRegistry('https://086276496519.dkr.ecr.us-west-2.amazonaws.com','ecr:us-west-2:rwen-workpc-aws'){
+    	docker.image("first.latest").push()
+	}
+	echo "pushed to ecr"
+	
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
           sh "docker login -u dockerhandson -p ${DOKCER_HUB_PASSWORD}"
