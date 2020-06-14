@@ -10,15 +10,15 @@ node{
       
     } 
     
-    /**
+    
     stage('Build Docker and Push Image in AWS'){
        // sh 'docker build -t dockerhandson/spring-boot-mongo .'
        aws ecr get-login --no-include-email | bash
        docker build -t first .
        docker tag first:latest 086276496519.dkr.ecr.us-west-2.amazonaws.com/first:latest
        docker push 086276496519.dkr.ecr.us-west-2.amazonaws.com/first:latest
-    } **/
-    
+    } 
+    /**
     stage('push'){
     aws ecr get-login --no-include-email | bash
     docker build -t first .
