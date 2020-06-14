@@ -11,8 +11,8 @@ node{
     } 
     
     stage('Docker Build') {
-    sh "docker build -t first ."
-    sh "docker tag first:latest 086276496519.dkr.ecr.us-west-2.amazonaws.com/first:latest"
+    docker.build("first")
+    // sh "docker tag first:latest 086276496519.dkr.ecr.us-west-2.amazonaws.com/first:latest"
     }  
 
     stage('Docker Push'){ 
